@@ -1,5 +1,8 @@
 # 描描｜相機描圖
 
+- 網站：https://ellenchiu.github.io/simple_ar_draw/
+- CI/CD：https://github.com/EllenChiu/simple_ar_draw/actions/workflows/pages.yml
+
 用手機相機觀看畫紙，疊上本機參考圖片，再在真正的紙上描繪。
 支援單指移動、雙指縮放與旋轉、透明度調整、鎖定，以及 4:3 相機畫面。
 相機以等比例裁切填滿工作區；不會將圖案投影到紙上。
@@ -24,7 +27,7 @@ pnpm preview:pages
 ```
 
 GitHub 儲存庫的 Settings → Pages → Build and deployment → Source 選 **GitHub Actions**。
-推送 `main` 後，`Pages CI and deploy` 會測試、檢查型別、產生靜態產物，再部署。
+`main` 已受保護：請開分支並提出 PR，等 `Test and build` 成功後合併。合併後，`Pages CI and deploy` 會測試、檢查型別、產生靜態產物，再部署。
 Pull request 只執行測試與建置，不取得部署權限。
 部署不需要 PAT、SSH 私鑰或自訂 Actions secret。
 
