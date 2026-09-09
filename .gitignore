@@ -36,3 +36,9 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/dist-pages/
+*.tsbuildinfo
+*.key
+*.p12
+*.pfx
+/.credentials/
