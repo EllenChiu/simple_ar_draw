@@ -1,5 +1,19 @@
 # 安全與管理
 
+## 已啟用的 GitHub 設定（2026-09-09）
+
+- 公開儲存庫 `EllenChiu/simple_ar_draw`；GitHub Pages 由 Actions 發布，HTTPS 已強制啟用。
+- 首次部署 `34304855098` 的測試、型別檢查、靜態產物驗證與部署全部成功；網站 HTTP 200。
+- main 分支：要求 PR 與 `Test and build` 成功且分支為最新、管理員也受規則限制、禁止 force push 與刪除、要求解決 PR 討論。個人維護者可自行合併，不要求另一位 reviewer。
+- github-pages 環境只允許 main 分支部署。
+- Actions 預設唯讀，禁止 Actions 建立並核准 PR。
+- Dependabot alerts、安全更新與每週依賴／Actions 更新已啟用，不自動合併。
+- Secret scanning、push protection 與 private vulnerability reporting 已啟用。
+- 沒有新增 repo secret、PAT 或部署金鑰；部署使用短效 GITHUB_TOKEN／OIDC。
+- GitHub CLI 透過官方裝置登入完成 EllenChiu 授權。這是本機登入，不是存放在 repo 或 CI 的秘密。可在本機執行 `gh auth logout --hostname github.com` 登出；完整撤銷則到 GitHub Settings → Applications → Authorized OAuth Apps → GitHub CLI → Revoke。
+
+仍需帳號本人確認：passkey／2FA、recovery codes 的保存、帳號通知信箱，以及定期清理不再使用的 OAuth 授權。這些不屬於 repo 部署權限，也沒有替你變更。
+
 ## 2026-09-09 套件檢查
 
 原始依賴掃描有 22 筆公告（11 high、8 moderate、3 low）。已更新 React、Vite 與可用的間接依賴修補版本；重新掃描剩下 `image-size` 的 2 筆 high 公告，套件來源當時尚無可安裝的修補版。
